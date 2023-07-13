@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dasar javascript</title>
+</head>
+<body>
+
+
+
+      
+      <script>
+
+      //     function timeConversion(time) {
+      //       const period = time.slice(-2); 
+      //       const timeWithoutPeriod = time.slice(0, -2); 
+      //       let hour = parseInt(timeWithoutPeriod.slice(0, 2), 10); 
+      //       const minute = timeWithoutPeriod.slice(3, 5); 
+      //       const second = timeWithoutPeriod.slice(6); 
+      //       if (period === 'PM' && hour !== 12) {
+      //             hour += 12; 
+      //       }
+      //       if (period === 'AM' && hour === 12) {
+      //             hour = 0; 
+      //       }
+            
+      //       const convertedTime = `${hour.toString().padStart(2, '0')}:${minute}:${second}`; 
+            
+      //       return convertedTime;
+      //     }
+
+      //     const inputTime = '12:01:00AM';
+      //     const result = timeConversion(inputTime);
+      //     console.log(result);
+
+      // function hitungjumlahlilin(lilin){
+
+      //       const lilinCounts = {};
+
+      //       lilin.forEach((lilin) => {
+      //             if(lilinCounts[lilin]){
+      //                   lilinCounts[lilin]++;
+      //             }else{
+      //                   lilinCounts[lilin] = 1;
+      //             }
+      //       });
+
+      //       const jumlahCount = Math.max(...Object.values(lilinCounts));
+
+      //       return jumlahCount;
+
+      // }
+
+      // const lilin = [4,4,1,3];
+
+      // const lilintertinggi = hitungjumlahlilin(lilin);
+
+      // console.log(lilintertinggi);
+
+
+      function kalkulator(totalBayar, hargaItem, validasi){
+
+            let pengembalian = totalBayar - hargaItem;
+
+            const perubahanValidasi = [];
+
+            for(let i = 0; i < validasi.length; i++){
+                  const valid = validasi[i];
+
+                  while (pengembalian >= valid){
+                        perubahanValidasi.push(valid);
+                        pengembalian = pengembalian - valid;
+
+                  }
+
+                  
+            }
+
+            return perubahanValidasi;
+
+      }
+
+      const totalBayar = 600000;
+      const hargaItem = 13000;
+      const validasi = [50000, 20000, 10000, 5000, 2000, 1000];
+
+      const result = kalkulator(totalBayar, hargaItem, validasi);
+      console.log(result);
+      </script>
+</body>
+</html>
